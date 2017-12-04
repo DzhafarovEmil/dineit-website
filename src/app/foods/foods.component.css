@@ -1,0 +1,39 @@
+#btn-add {
+  background-color: #1a7563;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}
+
+#main {
+  min-height: 575px;
+}
+
+.modal {
+  min-height: 524px;
+  padding: 10px 20px 0 20px;
+}
+
+#delete-food-modal {
+  min-width: 500px;
+  max-width: 500px;
+  min-height: 180px;
+  max-height: 180px;
+  margin-top: 120px;
+  padding: 0 0 0 0!important;
+}
+
+#description {
+  resize:none;
+  max-height: 50px;
+  min-height: 50px;
+}
+
+#add-item-btn {
+  width: 100%;
+  background-color: #cfbd3c;
+}
+
+span {
+  color: darkgrey;
+}

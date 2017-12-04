@@ -1,0 +1,6 @@
+<div class="row" id="main">
+  <h4>Your orders </h4>
+  <br>
+  <app-order *ngFor="let order of orders" [order]="order"></app-order>
+  <span *ngIf="orders.length===0" style="color: #28897f;font-weight: bold; font-size: large">You don't have any order yet</span>
+</div>

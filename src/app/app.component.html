@@ -1,0 +1,41 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">DineIT</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a *ngIf="!username" routerLink="login">Sign In</a></li>
+      <li><a *ngIf="username" routerLink="orders">Orders <span style="background-color: #b4a547" class="new badge">4</span></a></li>
+      <li><a *ngIf="username" routerLink="">Foods</a></li>
+      <li><a *ngIf="username" routerLink="settings">Settings</a></li>
+      <li><a *ngIf="username" (click)="logout()">Log out</a></li>
+      <li><a *ngIf="!username" routerLink="register">Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet>
+
+  </router-outlet>
+</div>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">DineIT</h5>
+        <p class="grey-text text-lighten-4">This website was created for study aim, e.d. term project. Kharkov National University of Radioelectronic</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 DineIT. Created by Emil Dzhafarov.
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+

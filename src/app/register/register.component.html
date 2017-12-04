@@ -1,0 +1,100 @@
+<div class="container">
+  <h4>
+    Sign up your company
+  </h4>
+
+  <div class="row">
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    <form class="col s12">
+      <div class="row modal-form-row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">restaurant_menu</i>
+          <input type="text" id="name" [(ngModel)]="foodCompany.name" name="name">
+          <label for="name" class="active">Name of organization</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_balance</i>
+          <input id="business_code" type="text" [(ngModel)]="foodCompany.businessCode" name="business_code">
+          <label for="business_code" class="active">Business Code</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="email" type="email" [(ngModel)]="foodCompany.email" name="email">
+          <label for="email" class="active">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="phone" type="text" [(ngModel)]="foodCompany.phoneNumber" name="phone">
+          <label for="phone" class="active">Phone Number</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="owner_name" type="text" [(ngModel)]="foodCompany.ownerName" name="ownerName">
+          <label for="owner_name" class="active">Owner Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">perm_identity</i>
+          <input id="reg-login" type="text" [(ngModel)]="foodCompany.username" name="login">
+          <label for="reg-login" class="active">Login</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <input id="reg-password" type="password" [(ngModel)]="foodCompany.password" name="password">
+          <label for="reg-password" class="active">Password</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">lock</i>
+          <input id="confirm_password" type="password" [(ngModel)]="confirmPassword" name="confirmPassword">
+          <label for="confirm_password" class="active">Confirm password</label>
+        </div>
+        <div class="input-field col s3">
+          <i class="material-icons prefix">home</i>
+          <select id="countryAndCity">
+            <optgroup *ngFor="let country of countriesAndCities" label="{{country.name}}">
+              <option name="city" *ngFor="let city of country.cities" value="{{city}}">{{city}}</option>
+            </optgroup>
+          </select>
+          <label>Country & City</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="address_district" type="text" name="address_district" [(ngModel)]="foodCompany.address.district">
+          <label class="active" for="address_district">District</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="address_street" type="text" name="address_street" [(ngModel)]="foodCompany.address.street">
+          <label class="active" for="address_street">Street</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="address_building" type="text" name="address_building" [(ngModel)]="foodCompany.address.building">
+          <label class="active" for="address_building">Building</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">image</i>
+          <input id="imageURL" type="url" name="imageURL" [(ngModel)]="foodCompany.imageURL">
+          <label for="imageURL" class="active">Image URL</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">people</i>
+          <div class="chips-placeholder"></div>
+        </div>
+        <div class="input-field col s12">
+          <a id="sign-up-btn" class="waves-effect waves-light btn-large" style="width: 100%;" (click)="register()">Sign Up for free</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="modal1">
+  <div class="modal-content">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="url-link" type="url" name="url" [(ngModel)]="socialLink.url">
+          <label for="url-link" class="active">Social Network's URL</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

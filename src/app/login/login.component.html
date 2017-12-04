@@ -1,0 +1,28 @@
+<div class="container">
+  <h4>
+    Sign in to your account
+  </h4>
+
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">perm_identity</i>
+          <input id="login" type="text" [(ngModel)]="user.username" name="login">
+          <label for="login" class="active">Login</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock</i>
+          <input id="password" type="password" [(ngModel)]="user.password"
+                 name="password">
+          <label for="password" class="active">Password</label>
+        </div>
+        <div class="input-field col s12">
+          <a class="waves-effect waves-light btn-large" id="login-btn" (click)="login()">Login</a>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  </div>
+</div>
+

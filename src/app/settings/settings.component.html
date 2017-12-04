@@ -1,0 +1,195 @@
+<div class="container">
+  <h4>
+    Details Information
+  </h4>
+
+  <div class="row">
+    <form id="form" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">restaurant_menu</i>
+          <input id="name" [(ngModel)]="foodCompany.name" name="name">
+          <label for="name" class="active">Name of organization</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_balance</i>
+          <input id="business_code" [(ngModel)]="foodCompany.businessCode" name="business_code">
+          <label for="business_code" class="active">Business Code</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="email" [(ngModel)]="foodCompany.email" name="email">
+          <label for="email" class="active">Email</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="phone" [(ngModel)]="foodCompany.phoneNumber" name="phone">
+          <label for="phone" class="active">Phone Number</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="owner_name" [(ngModel)]="foodCompany.ownerName" name="ownerName">
+          <label for="owner_name" class="active">Owner Name</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">perm_identity</i>
+          <input id="reg-login" disabled [(ngModel)]="foodCompany.username" name="login">
+          <label for="reg-login" class="active">Login</label>
+        </div>
+        <div class="input-field col s3">
+          <i class="material-icons prefix">home</i>
+          <input id="country" [(ngModel)]="foodCompany.address.country" name="country">
+          <label for="country" class="active">Country</label>
+        </div>
+        <div class="input-field col s3">
+          <input id="city" [(ngModel)]="foodCompany.address.city" name="city">
+          <label for="city" class="active">City</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="address_district" name="address_district" [(ngModel)]="foodCompany.address.district">
+          <label for="address_district" class="active">District</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="address_street" name="address_street" [(ngModel)]="foodCompany.address.street">
+          <label class="active" for="address_street">Street</label>
+        </div>
+        <div class="input-field col s2">
+          <input id="address_building" name="address_building" [(ngModel)]="foodCompany.address.building">
+          <label class="active" for="address_building">Building</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">image</i>
+          <input id="imageURL" name="imageURL" [(ngModel)]="foodCompany.imageURL">
+          <label for="imageURL" class="active">Image URL</label>
+        </div>
+        <div class="input-field col s12">
+          <br>
+          <span style="font-size: x-large">Social Networks</span>
+          <hr>
+        </div>
+        <div class="input-field col s5">
+          <span style="font-weight: bold;font-size: large">Name</span>
+        </div>
+        <div class="input-field col s6">
+          <span style="font-weight: bold;font-size: large">Url</span>
+        </div>
+        <app-social-network *ngFor="let item of socialNetworks" [socialNetwork]="item"></app-social-network>
+        <div class="input-field col s12">
+          <a class="btn-floating btn modal-trigger" id="add-network-btn">
+            <i class="material-icons">add</i>
+          </a>
+        </div>
+      </div>
+      <div class="input-field col s12">
+        <div class="input-field col s4">
+          <a id="change-pass-btn" class="waves-effect waves-light btn-large cyan lighten-2" style="width: 100%">Change password</a>
+        </div>
+        <div class="input-field col s4">
+          <a id="delete-btn" class="waves-effect waves-light btn-large red" style="width: 100%">Delete company</a>
+        </div>
+        <div class="input-field col s4">
+          <a id="save-btn" class="waves-effect waves-light btn-large"  style="width: 100%">Apply changes</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal" id="add-modal" style="max-width: 550px;">
+
+  <div class="modal-content">
+
+    <h5>
+      Add Social Network
+    </h5>
+
+    <div class="row" style="margin-bottom: -30px">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="name_new" type="text" name="name">
+            <label for="name_new">Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="url_new" type="url" name="url">
+            <label for="url_new">Url</label>
+          </div>
+          <div class="input-field col s6"></div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat red-text" id="btn-cancel-social-network">Cancel</a>
+          </div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat teal-text" id="btn-add-item-modal">Add</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal" id="delete-modal">
+  <div class="modal-content">
+
+    <div class="row" style="margin-bottom: -30px">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <h5>Are you sure to delete your company?</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6"></div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat teal-text" id="btn-delete-cancel-modal">Cancel</a>
+          </div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat red-text" id="btn-delete-modal">Delete</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal" id="change-password-modal" style="max-width: 550px;">
+
+  <div class="modal-content">
+
+    <h5>
+      Changing password
+    </h5>
+
+    <div class="row" style="margin-bottom: -30px">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="current" type="password" name="current">
+            <label for="current">Current</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="new" type="password" name="new">
+            <label for="new">New password</label>
+          </div>
+          <div class="input-field col s12">
+            <input id="repeat" type="password" name="repeat">
+            <label for="repeat">Repeat new password</label>
+          </div>
+          <div class="input-field col s6"></div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat red-text" id="btn-cancel-pass-modal">Cancel</a>
+          </div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat teal-text" id="btn-change-pass-modal">Apply</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

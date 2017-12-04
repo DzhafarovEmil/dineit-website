@@ -1,0 +1,128 @@
+<div class="row" id="main">
+  <h4>Available foods & drinks</h4>
+  <br>
+  <app-food *ngFor="let food of foods" [food]="food"></app-food>
+  <span *ngIf="foods.length===0" style="color: #28897f;font-weight: bold; font-size: large">You don't have any food yet</span>
+</div>
+
+<a id="btn-add" class="btn-floating btn-large waves-effect waves-light modal-trigger"><i
+  class="material-icons">add</i></a>
+
+<div class="modal" id="add-food-modal">
+
+  <div class="modal-content">
+
+    <h4>
+      Add new food or drink
+    </h4>
+
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="name_new" type="text" name="name">
+            <label for="name_new">Name</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="type_new" type="text" name="type">
+            <label for="type_new">Type</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="price_new" type="text" name="price">
+            <label for="price_new">Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="imageURL_new" type="url" name="imageURL">
+            <label for="imageURL_new">Image URL</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description_new" type="text" name="description" class="materialize-textarea" maxlength="100"></textarea>
+            <label for="description_new">Description</label>
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <a class="waves-effect waves-light btn-large modal-close" id="add-item-btn">Add item</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal" id="edit-food-modal">
+
+  <div class="modal-content">
+
+    <h4>
+      Edit item
+    </h4>
+
+    <div class="row">
+      <form class="col s12" id="req-form">
+        <div class="row">
+          <div class="input-field col s4">
+            <input id="name_edit" name="name">
+            <label for="name_edit" class="active">Name</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="type_edit" name="type" placeholder="Type">
+            <label for="type_edit" class="active">Type</label>
+          </div>
+          <div class="input-field col s4">
+            <input id="price_edit" type="number" name="price" placeholder="Price">
+            <label for="price_edit" class="active">Price</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="imageURL_edit" type="url" name="imageURL" placeholder="Image URL">
+            <label for="imageURL_edit" class="active">Image URL</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description_edit" name="description" class="materialize-textarea" maxlength="100" placeholder="Description"></textarea>
+            <label for="description_edit" class="active">Description</label>
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <a class="waves-effect waves-light btn-large" id="btn-save" style="width: 100%">Save changes</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal" id="delete-food-modal">
+
+  <div class="modal-content">
+
+    <div class="row" style="margin-bottom: -30px">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <h5>Are you sure to delete this item?</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6"></div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat teal-text" id="btn-delete-cancel">Cancel</a>
+          </div>
+          <div class="input-field col s3">
+            <a class="waves-effect waves-ripple btn-flat red-text" id="btn-delete">Delete</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+.material-icons {
+  font-size: 36px;
+}
+
+.container {
+  background-color: whitesmoke;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  min-width: 1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .45);
+}
+#sign-up-btn {
+  width: 100%;
+  background-color: #cfbd3c;
+  margin-bottom: 20px;
+}
+
+.alert-danger {
+  color: crimson;
+  font-size: large;
+  margin: 20px 20px 20px 20px;
+}
+
+.chip {
+  background-color: teal;
+}

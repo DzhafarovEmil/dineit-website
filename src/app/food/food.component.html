@@ -1,0 +1,29 @@
+<div class="col s4">
+  <div class="card" appHover>
+    <div class="card-image">
+      <img class="center-cropped" src="{{ food.imageURL }}">
+    </div>
+    <div class="card-content">
+      <div id="header">
+        <span id="title">{{ food.name | uppercase }}</span>
+        <span id="price">{{food.price}}</span>
+      </div>
+      <div id="main_content">
+        <label for="description">Description: </label>
+        <span id="description" style="display: flex">{{food.description}}</span>
+      </div>
+    </div>
+    <div class="fixed-action-btn horizontal"
+         style="position:fixed; float:right; display: none; bottom:24px; right:24px">
+      <a class="btn-floating btn-large darkcyan">
+        <i class="large material-icons">mode_edit</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red" (click)="showDeleteModal()"><i class="material-icons">delete</i></a></li>
+        <li><a class="btn-floating cyan modal-trigger" (click)="showEditModal()"><i class="material-icons">edit</i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,29 @@
+.container {
+  background-color: whitesmoke;
+  min-width: 450px;
+  max-width: 450px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .45);
+}
+
+#login-btn {
+  width: 100%;
+  background-color: #cfbd3c;
+}
+
+.alert-danger {
+  color: crimson;
+  font-size: large;
+  margin: 20px 20px 20px 20px;
+}
+
+.nav-wrapper {
+  background-color: #4f9a94;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
