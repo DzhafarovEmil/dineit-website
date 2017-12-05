@@ -8,8 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "preinstall": "npm install -g @angular/cli"
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "8.9.1",
@@ -17,6 +16,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "^1.5.5",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
