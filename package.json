@@ -11,6 +11,10 @@
     "e2e": "ng e2e",
     "preinstall": "npm install -g angular-cli"
   },
+  "engines": {
+    "node": "0.10.41",
+    "npm": "1.4.29"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
