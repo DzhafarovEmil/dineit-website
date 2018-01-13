@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/retry';
+import {FoodCompany} from "../models/food.company";
 
 @Injectable()
 export class FoodService {
@@ -25,19 +26,20 @@ export class FoodService {
   deleteFood(food: Food, listener: SuccessListener<Food>) {
     this.http.delete(this.rootApi + '/api/food/' + food.id,
       {params: this.params})
-      .subscribe((resp: number) => {
-        if (resp === food.id) {
-          listener.success(food);
+      .subscribe(next => {
+          if (next === food.id) {
+            listener.success(food);
+          }
+        },
+        error => {
+          console.log(error);
+          if (error.status === 401) {
+            alert('access token has been expired');
+            location.replace('/login');
+            // update access token
+          }
         }
-      },
-      error => {
-        if (error.status === 401) {
-          alert('access token has been expired');
-          location.replace('/login');
-          // update access token
-        }
-      }
-    );
+      );
   }
 
   editFood(food: Food, listener: SuccessListener<Food>) {

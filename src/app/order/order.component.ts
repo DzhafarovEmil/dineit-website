@@ -22,7 +22,11 @@ export class OrderComponent implements OnInit {
   }
 
   setOrderStatus(status: string): void {
-    this.order.status = status;
+    this.order.status = status.toUpperCase();
     this.parent.editOrder(this.order);
+  }
+
+  convert(millis: number): string {
+    return new Date(millis).toLocaleString();
   }
 }

@@ -48,6 +48,7 @@ export class AuthenticationService {
     params = params.set('password', password);
 
     return this.http.get(url, {headers: this.headers, params: params}).map(response => {
+      console.log(response);
       return AuthenticationService.saveTokenData(response);
     });
   }

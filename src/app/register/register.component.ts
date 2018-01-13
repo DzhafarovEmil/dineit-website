@@ -16,11 +16,6 @@ declare let Materialize: any;
 export class RegisterComponent implements OnInit {
 
   error = '';
-  countriesAndCities = [
-    {name: 'Ukraine', cities: ['Kharkiv', 'Lviv', 'Kiev', 'Dnepr', 'Odessa']},
-    {name: 'Poland', cities: ['Warshaw', 'Krakiv']},
-    {name: 'Germany', cities: ['Berlin', 'Hamburg', 'Munchen']}
-  ];
 
   public foodCompany: FoodCompany = new FoodCompany();
   public confirmPassword: string;
@@ -59,10 +54,6 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    const city = $('#countryAndCity').val();
-    this.foodCompany.address.city = city;
-    this.foodCompany.address.country = this.searchCountryForCity(city);
-
     if (this.validateForm()) {
       this.error = '';
       this.foodCompanyService.addNewCompany(this.foodCompany, {
@@ -78,16 +69,6 @@ export class RegisterComponent implements OnInit {
     this.foodCompany.socialNetworkRefs[this.socialLink.name] = this.socialLink.url;
     this.socialLink = {name: '', url: ''};
     Utils.hideModal('modal1');
-  }
-
-  private searchCountryForCity(city: string): string {
-    for (let i = 0; i < this.countriesAndCities.length; i++) {
-      if (this.countriesAndCities[i].cities.indexOf(city) !== -1) {
-        return this.countriesAndCities[i].name;
-      }
-    }
-
-    return 'undefined country';
   }
 
   private validateForm(): boolean {

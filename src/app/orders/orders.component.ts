@@ -26,13 +26,17 @@ export class OrdersComponent implements OnInit {
   }
 
   editOrder(order: Order) {
-    for (let i = this.orders.length - 1; i >= 0; i--) {
-      if (this.orders[i].id === order.id) {
-        this.orders[i] = order;
-        this.ref.markForCheck();
-        break;
+    this.orderService.editOrder(order, {
+      success: (o: Order) => {
+        for (let i = this.orders.length - 1; i >= 0; i--) {
+          if (this.orders[i].id === o.id) {
+            this.orders[i] = o;
+            this.ref.markForCheck();
+            break;
+          }
+        }
       }
-    }
+    });
   }
 
   fetchElements() {

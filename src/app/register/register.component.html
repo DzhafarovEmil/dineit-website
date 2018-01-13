@@ -49,22 +49,22 @@
         </div>
         <div class="input-field col s3">
           <i class="material-icons prefix">home</i>
-          <select id="countryAndCity">
-            <optgroup *ngFor="let country of countriesAndCities" label="{{country.name}}">
-              <option name="city" *ngFor="let city of country.cities" value="{{city}}">{{city}}</option>
-            </optgroup>
-          </select>
-          <label>Country & City</label>
+          <input id="address_country" type="text" name="address_country" [(ngModel)]="foodCompany.address.country">
+          <label class="active" for="address_country">Country</label>
         </div>
         <div class="input-field col s3">
+          <input id="address_city" type="text" name="address_city" [(ngModel)]="foodCompany.address.city">
+          <label class="active" for="address_city">City</label>
+        </div>
+        <div class="input-field col s2">
           <input id="address_district" type="text" name="address_district" [(ngModel)]="foodCompany.address.district">
           <label class="active" for="address_district">District</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col s2">
           <input id="address_street" type="text" name="address_street" [(ngModel)]="foodCompany.address.street">
           <label class="active" for="address_street">Street</label>
         </div>
-        <div class="input-field col s3">
+        <div class="input-field col s2">
           <input id="address_building" type="text" name="address_building" [(ngModel)]="foodCompany.address.building">
           <label class="active" for="address_building">Building</label>
         </div>
